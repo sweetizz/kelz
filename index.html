@@ -1,144 +1,72 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>honey bunny</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
 
-  <meta charset="UTF-8">
+    h1 {
+      color: #ff66b2;
+      font-size: 2.5em;
+    }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    .message {
+      background-color: #ffe6f0;
+      border: 2px solid #ff99cc;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 600px;
+      font-size: 20px;
+      color: #333;
+      display: none;
+    }
 
-  <title>honey bunny</title>
+    button {
+      background-color: #ff66b2;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-  <style>
-
-    body {
-
-      background-color: #fff0f5;
-
-      font-family: 'Arial', sans-serif;
-
-      text-align: center;
-
-      padding: 100px;
-
-      margin: 5;
-
-    }
-
-
-    h1 {
-
-      color: #ff66b2;
-
-      font-size: 2.5em;
-
-    }
-
-
-    .message {
-
-      background-color: #ffe6f0;
-
-      border: 2px solid #ff99cc;
-
-      border-radius: 15px;
-
-      padding: 30px;
-
-      margin: 30px auto;
-
-      max-width: 600px;
-
-      font-size: 20px;
-
-      color: #333;
-
-      display: none;
-
-    }
-
-
-    button {
-
-      background-color: #ff66b2;
-
-      color: white;
-
-      padding: 15px 30px;
-
-      border: none;
-
-      border-radius: 10px;
-
-      font-size: 18px;
-
-      cursor: pointer;
-
-      transition: 0.3s;
-
-    }
-
-
-    button:hover {
-
-      background-color: #e60073;
-
-    }
-
-  </style>
-
+    button:hover {
+      background-color: #e60073;
+    }
+  </style>
 </head>
-
 <body>
 
+  <h1>js wanna tell u something</h1>
 
-  <h1>js wanna tell u something</h1>
+  <div class="message" id="messageBox">
+    i know we've been talking for only 2 weeks, but i just want u to know that i really like you.<br><br>
+    hindi ko alam kung pano ko mae-explain sayo nang maayos para maniwala ka.<br><br>
+    i like u a looooooot, not just because you're pretty and cute (though you are), but talking to u makes me feel good fr.<br><br>
+    i meaaannn, you're pretty, cute, hot, nd funny plus ang gaan sa pakiramdam pag kausap kita.<br><br>
+    nakakainis lang kasi kahit simpleng message lang galing sayo, it already means so much to me. i catch myself smiling just by thinking of u, and honestly, ang gaan lang talaga ng feeling kapag ikaw na yung naiisip ko ewan ko ba nababaliw na ata ako.<br><br>
+    i know i'm not perfect, i might mess up sometimes, but i swear, my intentions are pure. i just wanna be the person who makes u smile when ur day gets tough, who listens to u even when u have nothing to say, who holds ur hand and makes u feel safe without saying a word.<br><br>
+  </div>
 
+  <button onclick="confess()">show</button>
 
-  <div class="message" id="messageBox">
-
-    
-
-   i know we've been talking for only 2 weeks, but i just want u to know that i really like you.<br><br>
-
-
-    hindi ko alam kung pano ko mae-explain sayo nang maayos para maniwala ka.<br><br>
-
-
-    i like u a looooooot, not just because you're pretty and cute (though you are), but talking to u makes me feel good fr.<br><br>
-
-
-    i meaaannn, you're pretty, cute, hot, nd funny plus ang gaan sa pakiramdam pag kausap kita.<br><br>
-
-
-   nakakainis lang kasi kahit simpleng message lang galing sayo, it already means so much to me. i catch myself smiling just by thinking of u, and honestly, ang gaan lang talaga ng feeling kapag ikaw na yung naiisip ko ewan ko ba nababaliw na ata ako.<br><br>
-
-
-   i know i'm not perfect, i might mess up sometimes, but i swear, my intentions are pure. i just wanna be the person who makes u smile when ur day gets tough, who listens to u even when u have nothing to say, who holds ur hand and makes u feel safe without saying a word.<br><br>
-
-    
-
-  </div>
-
-
-  <button onclick="confess()">show</button>
-
-
-  <script>
-
-    function confess() {
-
-      var box = document.getElementById("messageBox");
-
-      box.style.display = "block";
-
-    }
-
-  </script>
-
+  <script>
+    function confess() {
+      var box = document.getElementById("messageBox");
+      box.style.display = "block";
+    }
+  </script>
 
 </body>
-
 </html>
-
