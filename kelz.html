@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>cutie message center 💌</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Kitty Button with Ears 🐱</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
@@ -13,32 +13,54 @@
       margin: 0;
       padding: 40px 20px;
       text-align: center;
-      color: #333;
     }
 
     h1 {
-      font-size: 2.8em;
+      font-size: 2.5em;
       color: #ff5c8a;
       text-shadow: 1px 1px 3px #ffc0cb;
     }
 
-    .gif-container {
-      margin: 30px 0 10px 0;
-    }
-
-    .gif-container img {
-      max-width: 250px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
-      margin: 10px;
-    }
-
-    .label {
-      margin-top: 40px;
+    .kitty-button {
+      position: relative;
+      background-color: #fff;
+      color: #ff66b2;
+      font-size: 18px;
       font-weight: bold;
-      font-size: 22px;
-      color: #cc3366;
-      text-shadow: 1px 1px #ffe6f0;
+      border: 3px solid #ff66b2;
+      padding: 20px 30px 20px 60px;
+      margin: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      clip-path: polygon(
+        15% 0%,    /* left ear */
+        18% 10%,
+        0% 10%, 
+        0% 100%, 
+        100% 100%, 
+        100% 10%, 
+        82% 10%, 
+        85% 0%,    /* right ear */
+        50% 5%     /* top middle bump */
+      );
+      box-shadow: 0 5px 10px rgba(255, 105, 180, 0.2);
+    }
+
+    .kitty-button:hover {
+      transform: scale(1.05);
+      background-color: #fff0f8;
+    }
+
+    .kitty-button::before {
+      content: '';
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Hello_Kitty_bow.svg');
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .box {
@@ -55,127 +77,30 @@
       justify-content: center;
       box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
     }
-
-    /* Hello Kitty Button */
-    .hello-kitty-button {
-      background-color: #ff66b2;
-      color: white;
-      padding: 12px 22px 12px 50px;
-      font-size: 17px;
-      border: none;
-      border-radius: 40px;
-      margin: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
-      position: relative;
-    }
-
-    .hello-kitty-button::before {
-      content: "";
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Hello_Kitty_bow.svg');
-      background-size: cover;
-      width: 30px;
-      height: 30px;
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    /* Waving Animation */
-    .hello-kitty-button:hover {
-      background-color: #e60073;
-      animation: wave 0.6s ease-in-out infinite;
-    }
-
-    @keyframes wave {
-      0% { transform: rotate(0deg); }
-      20% { transform: rotate(2deg); }
-      40% { transform: rotate(-2deg); }
-      60% { transform: rotate(1.5deg); }
-      80% { transform: rotate(-1.5deg); }
-      100% { transform: rotate(0deg); }
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #888;
-    }
   </style>
 </head>
 <body>
-  <h1>hey, just wanted to say...</h1>
 
-  <!-- Top GIF -->
-  <div class="gif-container">
-    <img src="https://media1.tenor.com/m/dgFc4LnszB4AAAAC/i-love-you-so-much-hello-kitty.gif" alt="Hello Kitty I Love You GIF" />
-  </div>
+  <h1>Meow! I'm a Kitty Button</h1>
 
-  <!-- JavaScript Output -->
-  <div class="label">💖 JavaScript says:</div>
-  <div class="box" id="jsBox">click the button</div>
-  <button class="hello-kitty-button" onclick="showJS()">Run JavaScript</button>
+  <div class="box" id="msgBox">Click the kitty button!</div>
 
-  <!-- Java Output -->
-  <div class="label">☕ Java says:</div>
-  <div class="box" id="javaBox">click the button</div>
-  <button class="hello-kitty-button" onclick="runFakeJava()">Run Java</button>
-
-  <!-- Python Output -->
-  <div class="label">🐍 Python says:</div>
-  <div class="box" id="pyBox">click the button</div>
-  <button class="hello-kitty-button" onclick="runFakePython()">Run Python</button>
-
-  <!-- Python GIF -->
-  <div class="gif-container">
-    <img src="https://media.tenor.com/g_5p6Arglx8AAAAi/blowing-kisses-kisses.gif" alt="Hello Kitty Blowing Kisses GIF" />
-  </div>
-
-  <footer>
-    💌 hello kitty's waving now... how cute is that?
-  </footer>
+  <button class="kitty-button" onclick="showMsg()">Click Me</button>
 
   <script>
-    const jsMessages = [
-      "take your time, you're not in a race.",
-      "you're doing better than you think.",
-      "a quiet day is still a good day.",
-      "slow progress is still progress.",
-      "you’re allowed to breathe and pause."
+    const messages = [
+      "you're doing better than you think 🐾",
+      "sending purrs your way 🐱",
+      "you are loved — no claws about it!",
+      "even quiet cats are brave cats.",
+      "nap if you need. recharge your paws."
     ];
 
-    const javaMessages = [
-      "just like java compiles, you'll get through too.",
-      "you may not see it, but you’ve grown a lot.",
-      "you’re consistent — and that’s powerful.",
-      "your effort is not invisible.",
-      "you don't need to be perfect, just present."
-    ];
-
-    const pythonMessages = [
-      "you’ve made it through 100% of your bad days.",
-      "it’s okay to feel tired, you’re still valid.",
-      "some days are for resting, not fixing.",
-      "you matter even when you're quiet.",
-      "kindness to yourself is not a weakness."
-    ];
-
-    function showJS() {
-      const msg = jsMessages[Math.floor(Math.random() * jsMessages.length)];
-      document.getElementById("jsBox").innerText = msg;
-    }
-
-    function runFakeJava() {
-      const msg = javaMessages[Math.floor(Math.random() * javaMessages.length)];
-      document.getElementById("javaBox").innerText = msg;
-    }
-
-    function runFakePython() {
-      const msg = pythonMessages[Math.floor(Math.random() * pythonMessages.length)];
-      document.getElementById("pyBox").innerText = msg;
+    function showMsg() {
+      const random = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("msgBox").innerText = random;
     }
   </script>
+
 </body>
 </html>
