@@ -8,7 +8,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
     body {
-      font-family: 'Comic Neue', cursive;
+      font-family: 'Comic+Neue', cursive;
       background: linear-gradient(to bottom right, #fff0f5, #ffe6fa);
       margin: 0;
       padding: 40px 20px;
@@ -43,36 +43,62 @@
 
     .box {
       background: #fff;
-      border: 2px dashed #ff99cc;
-      padding: 20px;
+      border: 3px dotted #ff99cc;
+      padding: 25px;
       margin: 15px auto;
-      border-radius: 15px;
+      border-radius: 20px;
       font-size: 18px;
       max-width: 500px;
-      min-height: 60px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
+      box-shadow: 0 6px 12px rgba(255, 182, 193, 0.4);
+      background-image: repeating-linear-gradient(
+        45deg,
+        #fffafc,
+        #fffafc 10px,
+        #ffe6f0 10px,
+        #ffe6f0 20px
+      );
+      color: #cc3366;
       text-align: center;
+      transition: 0.3s ease;
     }
 
-
+    /* Cute Button Styling */
     .hello-kitty-button {
-      background-color: #ffc0da;
-      color: #8b004f;
-      padding: 12px 24px;
+      background: linear-gradient(145deg, #ffb6d5, #ff85c1);
+      color: #fff;
+      padding: 14px 28px;
       font-size: 16px;
-      border: 2px solid #ff99cc;
-      border-radius: 25px;
-      margin: 12px;
+      font-weight: bold;
+      border: 2px solid #ff66a3;
+      border-radius: 50px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 12px rgba(255, 105, 180, 0.3);
+      position: relative;
+    }
+
+    .hello-kitty-button::after {
+      content: "💖";
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .hello-kitty-button:hover {
-      background-color: #ffd6e8;
-      transform: scale(1.03);
+      background: #ff99cc;
+      transform: translateY(-2px);
+    }
+
+    .hello-kitty-button:hover::after {
+      opacity: 1;
     }
 
     footer {
@@ -88,7 +114,7 @@
     <img src="https://media1.tenor.com/m/dgFc4LnszB4AAAAC/i-love-you-so-much-hello-kitty.gif" alt="Hello Kitty I Love You GIF" />
   </div>
 
-  <div class="label">^⁠_⁠^</div>
+  <div class="label">darling ko</div>
   <div class="box" id="jsBox">click the button</div>
   <button class="hello-kitty-button" onclick="showJS()">Run JavaScript</button>
 
