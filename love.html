@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>honey bunny</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe6fa);
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      color: #ff5c8a;
+      text-shadow: 1px 1px 3px #ffc0cb;
+    }
+
+    .gif-container {
+      margin: 30px 0 10px 0;
+    }
+
+    .gif-container img {
+      max-width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+      margin: 10px;
+    }
+
+    .label {
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 22px;
+      color: #cc3366;
+      text-shadow: 1px 1px #ffe6f0;
+    }
+
+    .box {
+      background-color: #fff0f8;
+      border: 2px solid #ffb6d5;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      font-size: 18px;
+      max-width: 500px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #cc3366;
+      box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+    }
+
+    .hello-kitty-button {
+      background: linear-gradient(to right, #ffb6d5, #ff85c1);
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+      position: relative;
+    }
+
+    .hello-kitty-button::after {
+      content: "";
+      font-size: 16px;
+      transition: opacity 0.3s ease;
+    }
+
+    .hello-kitty-button:hover {
+      background: #ff99cc;
+      transform: scale(1.03);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gif-container">
+    <img src="https://media1.tenor.com/m/dgFc4LnszB4AAAAC/i-love-you-so-much-hello-kitty.gif" alt="Hello Kitty I Love You GIF" />
+  </div>
+
+  <div class="box" id="jsBox">click the button</div>
+  <button class="hello-kitty-button" onclick="showJS()">show</button>
+
+  <div class="gif-container">
+    <img src="https://media.tenor.com/g_5p6Arglx8AAAAi/blowing-kisses-kisses.gif" alt="Hello Kitty Blowing Kisses GIF" />
+  </div>
+
+  <footer>kelz</footer>
+
+  <script>
+    const jsMessages = [
+      "just wanted to let you know that i love you soooooo muuuuuuuuuch",
+      "and i’ll never leave you.",
+      "you’re the kind of person i want to hold on to",
+      "someone i’d choose again and again",
+      "no matter how many times life resets",
+      "for you, i would.",
+      "i would do anything for you, without hesitation",
+      "without doubts",
+      "without second thoughts.",
+      "i wish i could have you forever",
+      " i want to show you that not everyone leaves",
+      "i'll be the person that will stay through your ups and downs."
+    ];
+
+    let currentIndex = 0;
+
+    function showJS() {
+      const box = document.getElementById("jsBox");
+      box.innerText = jsMessages[currentIndex];
+      currentIndex++;
+      if (currentIndex >= jsMessages.length) currentIndex = 0;
+    }
+  </script>
+</body>
+  </html>
+  
