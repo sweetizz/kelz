@@ -54,60 +54,25 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
-      opacity: 0;
-      transform: scale(0.95);
-      transition: 0.5s ease-in-out;
       text-align: center;
     }
 
-    .box.active {
-      opacity: 1;
-      transform: scale(1.05);
-      animation: bounceFade 0.6s ease;
-      box-shadow: 0 0 15px rgba(255, 153, 204, 0.4);
-    }
 
-    @keyframes bounceFade {
-      0% { transform: scale(0.8); opacity: 0; }
-      60% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); }
-    
     .hello-kitty-button {
-      background-color: #ff66b2;
-      color: white;
-      padding: 12px 22px 12px 50px;
-      font-size: 17px;
-      border: none;
-      border-radius: 40px;
-      margin: 8px;
+      background-color: #ffc0da;
+      color: #8b004f;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: 2px solid #ff99cc;
+      border-radius: 25px;
+      margin: 12px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
-      position: relative;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .hello-kitty-button::before {
-      content: "";
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Hello_Kitty_bow.svg');
-      background-size: cover;
-      width: 30px;
-      height: 30px;
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-  
     .hello-kitty-button:hover {
-      background-color: #e60073;
-      animation: pulse 1s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      background-color: #ffd6e8;
+      transform: scale(1.03);
     }
 
     footer {
@@ -123,7 +88,7 @@
     <img src="https://media1.tenor.com/m/dgFc4LnszB4AAAAC/i-love-you-so-much-hello-kitty.gif" alt="Hello Kitty I Love You GIF" />
   </div>
 
-  <div class="label">darling ko</div>
+  <div class="label"></div>
   <div class="box" id="jsBox">click the button</div>
   <button class="hello-kitty-button" onclick="showJS()">Run JavaScript</button>
 
@@ -153,18 +118,10 @@
 
     function showJS() {
       const box = document.getElementById("jsBox");
-
-      box.classList.remove("active");
-      void box.offsetWidth;
-      box.classList.add("active");
-
-      setTimeout(() => {
-        box.innerText = jsMessages[currentIndex];
-        currentIndex++;
-        if (currentIndex >= jsMessages.length) currentIndex = 0;
-      }, 150);
+      box.innerText = jsMessages[currentIndex];
+      currentIndex++;
+      if (currentIndex >= jsMessages.length) currentIndex = 0;
     }
   </script>
 </body>
-  </html>
-      
+</html>
