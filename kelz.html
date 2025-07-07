@@ -23,7 +23,7 @@
     }
 
     .gif-container {
-      margin: 30px 0;
+      margin: 30px 0 10px 0;
     }
 
     .gif-container img {
@@ -56,22 +56,35 @@
       box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
     }
 
-    button {
+    .hello-kitty-button {
       background-color: #ff66b2;
       color: white;
-      padding: 12px 25px;
+      padding: 12px 22px 12px 50px;
       font-size: 17px;
       border: none;
-      border-radius: 12px;
+      border-radius: 40px;
       margin: 8px;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
       box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+      position: relative;
     }
 
-    button:hover {
+    .hello-kitty-button:hover {
       background-color: #e60073;
       transform: scale(1.05);
+    }
+
+    .hello-kitty-button::before {
+      content: "";
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Hello_Kitty_bow.svg');
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     footer {
@@ -79,35 +92,38 @@
       font-size: 14px;
       color: #888;
     }
-
   </style>
 </head>
 <body>
   <h1>hey, just wanted to say...</h1>
 
-  <!-- GIFs -->
+  <!-- Top GIF -->
   <div class="gif-container">
-    <img src="https://media1.tenor.com/m/dgFc4LnszB4AAAAC/i-love-you-so-much-hello-kitty.gif" alt="Hello Kitty Love You GIF" />
-    <img src="https://media.tenor.com/g_5p6Arglx8AAAAi/blowing-kisses-kisses.gif" alt="Blowing Kisses GIF" />
+    <img src="https://media1.tenor.com/m/dgFc4LnszB4AAAAC/i-love-you-so-much-hello-kitty.gif" alt="Hello Kitty I Love You GIF" />
   </div>
 
   <!-- JavaScript Output -->
   <div class="label">💖 JavaScript says:</div>
   <div class="box" id="jsBox">click the button</div>
-  <button onclick="showJS()">Run JavaScript</button>
+  <button class="hello-kitty-button" onclick="showJS()">Run JavaScript</button>
 
   <!-- Java Output -->
   <div class="label">☕ Java says:</div>
   <div class="box" id="javaBox">click the button</div>
-  <button onclick="runFakeJava()">Run Java</button>
+  <button class="hello-kitty-button" onclick="runFakeJava()">Run Java</button>
 
   <!-- Python Output -->
   <div class="label">🐍 Python says:</div>
   <div class="box" id="pyBox">click the button</div>
-  <button onclick="runFakePython()">Run Python</button>
+  <button class="hello-kitty-button" onclick="runFakePython()">Run Python</button>
+
+  <!-- Python GIF -->
+  <div class="gif-container">
+    <img src="https://media.tenor.com/g_5p6Arglx8AAAAi/blowing-kisses-kisses.gif" alt="Hello Kitty Blowing Kisses GIF" />
+  </div>
 
   <footer>
-    💌 all in one file, all made with love
+    💌 all in one file, hello kitty–powered and cutie-approved 🐱
   </footer>
 
   <script>
