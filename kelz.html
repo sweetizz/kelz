@@ -3,114 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>honey bunny</title>
+  <title>multi-language message generator 💬</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
     body {
       font-family: 'Comic Neue', cursive;
-      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
-      margin: 0;
-      padding: 40px;
+      background: linear-gradient(to bottom right, #fdf0f5, #ffeaf4);
+      padding: 50px;
       text-align: center;
+      margin: 0;
     }
+
     h1 {
-      color: #ff66b2;
-      font-size: 2.8em;
+      color: #ff6699;
+      font-size: 2.5em;
     }
+
     .box {
       background: #fff;
       border: 2px dashed #ff99cc;
-      padding: 30px;
+      padding: 20px;
       margin: 30px auto;
-      border-radius: 15px;
-      font-size: 20px;
+      border-radius: 12px;
+      font-size: 18px;
       color: #444;
       max-width: 600px;
     }
+
     button {
       background-color: #ff66b2;
       color: white;
-      padding: 14px 28px;
-      font-size: 18px;
+      padding: 12px 20px;
+      font-size: 16px;
       border: none;
-      border-radius: 12px;
-      margin-top: 20px;
+      border-radius: 10px;
+      margin: 10px;
       cursor: pointer;
       transition: 0.3s;
     }
+
     button:hover {
       background-color: #e60073;
     }
-    pre {
-      text-align: left;
-      background-color: #fff0f5;
-      border: 1px solid #ffb6c1;
-      padding: 15px;
-      border-radius: 10px;
-      overflow-x: auto;
-      max-width: 90%;
-      margin: 20px auto;
-    }
-    code {
-      font-family: 'Courier New', monospace;
-      font-size: 15px;
-      color: #d63384;
+
+    .label {
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 20px;
+      color: #cc3366;
     }
   </style>
 </head>
 <body>
-  <h1>hey cutie</h1>
-  <div class="box" id="msgBox">click the button</div>
-  <button onclick="showLove()">show me love</button>
+  <h1>hey, just wanted to say...</h1>
+
+  <div class="label">💖 JavaScript says:</div>
+  <div class="box" id="jsBox">click the button</div>
+  <button onclick="showJS()">Run JS</button>
+
+  <div class="label">☕ Java says:</div>
+  <div class="box" id="javaBox">click the button</div>
+  <button onclick="runFakeJava()">Run Java</button>
+
+  <div class="label">🐍 Python says:</div>
+  <div class="box" id="pyBox">click the button</div>
+  <button onclick="runFakePython()">Run Python</button>
 
   <script>
-    const messages = [
-      "you make my heart go boom boom",
-      "you're cuter than all the cats on the internet",
-      "i think about you more than i think about food",
-      "your smile >> my whole day",
-      "talking to u = instant serotonin"
+    const jsMessages = [
+      "you don’t need to rush, one step at a time is okay.",
+      "rest is productive too.",
+      "some days are heavier. it’s okay to pause.",
+      "even if today is quiet, it still matters.",
+      "you’re doing better than you think."
     ];
-    function showLove() {
-      const box = document.getElementById('msgBox');
-      const random = Math.floor(Math.random() * messages.length);
-      box.innerHTML = messages[random];
+
+    const javaMessages = [
+      "keep going, you’ve made it this far.",
+      "progress is progress, even if it's small.",
+      "you are capable of doing hard things.",
+      "every day won’t be perfect, but you still tried.",
+      "you belong here, even on hard days."
+    ];
+
+    const pythonMessages = [
+      "don’t forget to check in with yourself.",
+      "you are more than what you produce.",
+      "slow days are still important days.",
+      "it’s okay to not have all the answers yet.",
+      "being kind to yourself matters."
+    ];
+
+    function showJS() {
+      document.getElementById("jsBox").innerText =
+        jsMessages[Math.floor(Math.random() * jsMessages.length)];
+    }
+
+    function runFakeJava() {
+      document.getElementById("javaBox").innerText =
+        javaMessages[Math.floor(Math.random() * javaMessages.length)];
+    }
+
+    function runFakePython() {
+      document.getElementById("pyBox").innerText =
+        pythonMessages[Math.floor(Math.random() * pythonMessages.length)];
     }
   </script>
-
-  <h2>love</h2>
-  <pre><code>// LoveGenerator.java
-import java.util.Random;
-
-public class LoveGenerator {
-  public static void main(String[] args) {
-    String[] messages = {
-      "You're the sprinkles to my cupcake!",
-      "Every day with you is my favorite!",
-      "I like you more than Java itself!",
-      "You’re my sunshine on a cloudy day!",
-      "You're perfect just the way you are &lt;3"
-    };
-    Random rand = new Random();
-    int index = rand.nextInt(messages.length);
-    System.out.println(messages[index]);
-  }
-}
-</code></pre>
-
-  <h2>other</h2>
-  <pre><code># love_generator.py
-import random
-
-messages = [
-  "You're my favorite notification 💬💖",
-  "If I had a star for every time you made me smile, I’d have a galaxy ✨",
-  "Talking to you is my favorite hobby 💕",
-  "You're the reason my heart goes *bloop bloop* 🥺",
-  "i like u more than sleep 💤💘"
-]
-
-print(random.choice(messages))
-</code></pre>
 </body>
 </html>
