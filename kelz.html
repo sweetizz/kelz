@@ -8,7 +8,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
     body {
-      font-family: 'Comic Neue', cursive;
+      font-family: 'Comic+Neue', cursive;
       background: linear-gradient(to bottom right, #fff0f5, #ffe6fa);
       margin: 0;
       padding: 40px 20px;
@@ -44,10 +44,11 @@
     .box {
       background: #fff;
       border: 2px dashed #ff99cc;
-      padding: 20px;
+      padding: 25px;
       margin: 15px auto;
       border-radius: 15px;
       font-size: 18px;
+      line-height: 1.7;
       max-width: 500px;
       min-height: 60px;
       display: flex;
@@ -57,6 +58,8 @@
       opacity: 0;
       transform: scale(0.95);
       transition: 0.5s ease-in-out;
+      white-space: pre-wrap;
+      text-align: left;
     }
 
     .box.active {
@@ -80,7 +83,6 @@
       }
     }
 
-    /* Hello Kitty Button */
     .hello-kitty-button {
       background-color: #ff66b2;
       color: white;
@@ -107,7 +109,6 @@
       transform: translateY(-50%);
     }
 
-    /* Waving Animation */
     .hello-kitty-button:hover {
       background-color: #e60073;
       animation: wave 0.6s ease-in-out infinite;
@@ -148,24 +149,26 @@
   </div>
 
   <footer>
-    💌 hello kitty's waving now... how cute is that?
+    kelz
   </footer>
 
   <script>
     const jsMessages = [
-      "🌸 take your time, you're not in a race.",
-      "🌸 you're doing better than you think.",
-      "🌸 a quiet day is still a good day.",
-      "🌸 slow progress is still progress.",
-      "🌸 you’re allowed to breathe and pause."
+      `you’re the kind of person i want to hold on to
+someone i’d choose again and again
+no matter how many times life resets
+for you, i would.
+i would do anything for you, without hesitation
+without doubts
+without second thoughts.`
     ];
 
     function showJS() {
-      const msg = jsMessages[Math.floor(Math.random() * jsMessages.length)];
       const box = document.getElementById("jsBox");
+      const msg = jsMessages[0]; // only one message
       box.innerText = msg;
       box.classList.remove("active");
-      void box.offsetWidth; // force reflow to restart animation
+      void box.offsetWidth; // reflow
       box.classList.add("active");
     }
   </script>
