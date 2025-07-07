@@ -3,111 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>multi-language message generator 💬</title>
+  <title>cutie message center 💌</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
     body {
       font-family: 'Comic Neue', cursive;
-      background: linear-gradient(to bottom right, #fdf0f5, #ffeaf4);
-      padding: 50px;
-      text-align: center;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe6fa);
       margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+      color: #333;
     }
 
     h1 {
-      color: #ff6699;
-      font-size: 2.5em;
+      font-size: 2.8em;
+      color: #ff5c8a;
+      text-shadow: 1px 1px 3px #ffc0cb;
+    }
+
+    .gif-container {
+      margin: 30px 0;
+    }
+
+    .gif-container img {
+      max-width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+      margin: 10px;
+    }
+
+    .label {
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 22px;
+      color: #cc3366;
+      text-shadow: 1px 1px #ffe6f0;
     }
 
     .box {
       background: #fff;
       border: 2px dashed #ff99cc;
       padding: 20px;
-      margin: 30px auto;
-      border-radius: 12px;
+      margin: 15px auto;
+      border-radius: 15px;
       font-size: 18px;
-      color: #444;
-      max-width: 600px;
+      max-width: 500px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
     }
 
     button {
       background-color: #ff66b2;
       color: white;
-      padding: 12px 20px;
-      font-size: 16px;
+      padding: 12px 25px;
+      font-size: 17px;
       border: none;
-      border-radius: 10px;
-      margin: 10px;
+      border-radius: 12px;
+      margin: 8px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
     }
 
     button:hover {
       background-color: #e60073;
+      transform: scale(1.05);
     }
 
-    .label {
-      margin-top: 30px;
-      font-weight: bold;
-      font-size: 20px;
-      color: #cc3366;
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #888;
     }
+
   </style>
 </head>
 <body>
   <h1>hey, just wanted to say...</h1>
 
+  <!-- GIFs -->
+  <div class="gif-container">
+    <img src="https://media1.tenor.com/m/dgFc4LnszB4AAAAC/i-love-you-so-much-hello-kitty.gif" alt="Hello Kitty Love You GIF" />
+    <img src="https://media.tenor.com/g_5p6Arglx8AAAAi/blowing-kisses-kisses.gif" alt="Blowing Kisses GIF" />
+  </div>
+
+  <!-- JavaScript Output -->
   <div class="label">💖 JavaScript says:</div>
   <div class="box" id="jsBox">click the button</div>
-  <button onclick="showJS()">Run JS</button>
+  <button onclick="showJS()">Run JavaScript</button>
 
+  <!-- Java Output -->
   <div class="label">☕ Java says:</div>
   <div class="box" id="javaBox">click the button</div>
   <button onclick="runFakeJava()">Run Java</button>
 
+  <!-- Python Output -->
   <div class="label">🐍 Python says:</div>
   <div class="box" id="pyBox">click the button</div>
   <button onclick="runFakePython()">Run Python</button>
 
+  <footer>
+    💌 all in one file, all made with love
+  </footer>
+
   <script>
     const jsMessages = [
-      "you don’t need to rush, one step at a time is okay.",
-      "rest is productive too.",
-      "some days are heavier. it’s okay to pause.",
-      "even if today is quiet, it still matters.",
-      "you’re doing better than you think."
+      "take your time, you're not in a race.",
+      "you're doing better than you think.",
+      "a quiet day is still a good day.",
+      "slow progress is still progress.",
+      "you’re allowed to breathe and pause."
     ];
 
     const javaMessages = [
-      "keep going, you’ve made it this far.",
-      "progress is progress, even if it's small.",
-      "you are capable of doing hard things.",
-      "every day won’t be perfect, but you still tried.",
-      "you belong here, even on hard days."
+      "just like java compiles, you'll get through too.",
+      "you may not see it, but you’ve grown a lot.",
+      "you’re consistent — and that’s powerful.",
+      "your effort is not invisible.",
+      "you don't need to be perfect, just present."
     ];
 
     const pythonMessages = [
-      "don’t forget to check in with yourself.",
-      "you are more than what you produce.",
-      "slow days are still important days.",
-      "it’s okay to not have all the answers yet.",
-      "being kind to yourself matters."
+      "you’ve made it through 100% of your bad days.",
+      "it’s okay to feel tired, you’re still valid.",
+      "some days are for resting, not fixing.",
+      "you matter even when you're quiet.",
+      "kindness to yourself is not a weakness."
     ];
 
     function showJS() {
-      document.getElementById("jsBox").innerText =
-        jsMessages[Math.floor(Math.random() * jsMessages.length)];
+      const msg = jsMessages[Math.floor(Math.random() * jsMessages.length)];
+      document.getElementById("jsBox").innerText = msg;
     }
 
     function runFakeJava() {
-      document.getElementById("javaBox").innerText =
-        javaMessages[Math.floor(Math.random() * javaMessages.length)];
+      const msg = javaMessages[Math.floor(Math.random() * javaMessages.length)];
+      document.getElementById("javaBox").innerText = msg;
     }
 
     function runFakePython() {
-      document.getElementById("pyBox").innerText =
-        pythonMessages[Math.floor(Math.random() * pythonMessages.length)];
+      const msg = pythonMessages[Math.floor(Math.random() * pythonMessages.length)];
+      document.getElementById("pyBox").innerText = msg;
     }
   </script>
 </body>
